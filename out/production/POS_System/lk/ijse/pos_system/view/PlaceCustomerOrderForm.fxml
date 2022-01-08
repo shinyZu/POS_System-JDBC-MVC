@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="contextPlaceOrder" prefHeight="680.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos_system.controller.PlaceCustomerOrderFormController">
+   <children>
+      <AnchorPane prefHeight="30.0" prefWidth="1050.0" style="-fx-background-color: #5C8D89;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="395.0" layoutY="17.0" text="Place Customer Order" AnchorPane.leftAnchor="395.0" AnchorPane.rightAnchor="395.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="30.0" onMouseClicked="#goToPreviousPageOnAction" pickOnBounds="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../assets/images/arrowLeft.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="20.0" onMouseClicked="#logoutOnAction" pickOnBounds="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../assets/images/logoutIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="60.0" prefHeight="650.0" prefWidth="1050.0" AnchorPane.bottomAnchor="-244.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <ScrollPane hvalue="0.5" layoutX="6.0" prefHeight="553.0" prefWidth="1050.0" AnchorPane.bottomAnchor="311.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="865.0" prefWidth="1050.0">
+                     <children>
+                        <GridPane alignment="TOP_RIGHT" layoutY="23.0" prefHeight="47.0" prefWidth="1050.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="48.0" minHeight="10.0" percentHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="48.0" minHeight="10.0" percentHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Group GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <Group GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <children>
+                                    <Label contentDisplay="CENTER" prefHeight="36.0" prefWidth="168.0" style="-fx-background-radius: 8; -fx-border-color: black; -fx-border-radius: 5;" text="Time : ">
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="lblTime" layoutX="58.0" layoutY="9.0" prefHeight="19.0" prefWidth="109.0" text="08:07:43 AM">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                              <Label contentDisplay="CENTER" prefHeight="36.0" prefWidth="168.0" style="-fx-background-radius: 8; -fx-border-color: black; -fx-border-radius: 5; -fx-border-image-width: 6;" text="Date :">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="lblDate" text="16-08-2021" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="65.0" />
+                                 </padding>
+                              </Label>
+                              <Label contentDisplay="CENTER" prefHeight="36.0" prefWidth="168.0" style="-fx-background-color: #A7D7C5; -fx-background-radius: 8;" text="Order ID :" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                                 <effect>
+                                    <InnerShadow choke="0.06" color="#575757" />
+                                 </effect>
+                              </Label>
+                              <Label fx:id="lblOrderID" text="O-001" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="80.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Separator layoutX="14.0" layoutY="82.0" prefHeight="0.0" prefWidth="1015.0" style="-fx-background-color: #999;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                        <ComboBox fx:id="cmbCustIDs" layoutX="14.0" layoutY="99.0" prefHeight="26.0" prefWidth="172.0" promptText="Customer ID" AnchorPane.leftAnchor="20.0" />
+                        <JFXButton buttonType="RAISED" layoutX="215.0" layoutY="99.0" onAction="#searchCustomerOnAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #E6DD3B; -fx-background-radius: 5;" text="Search">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <TextField fx:id="txtCustId" layoutX="14.0" layoutY="152.0" onMouseClicked="#enableBtnAddNewCustomerOnClick" promptText="Customer ID" AnchorPane.leftAnchor="20.0" />
+                        <TextField fx:id="txtCustTitle" layoutX="215.0" layoutY="152.0" promptText="Customer Title" />
+                        <TextField fx:id="txtCustName" layoutX="411.0" layoutY="152.0" prefHeight="26.0" prefWidth="214.0" promptText="Customer Name" />
+                        <TextField fx:id="txtCustAddress" layoutX="645.0" layoutY="152.0" prefHeight="26.0" prefWidth="181.0" promptText="Customer Address" />
+                        <TextField fx:id="txtCustCity" layoutX="851.0" layoutY="152.0" prefHeight="26.0" prefWidth="172.0" promptText="City" AnchorPane.rightAnchor="20.0" />
+                        <TextField fx:id="txtCustProvince" layoutX="14.0" layoutY="207.0" promptText="Province" AnchorPane.leftAnchor="20.0" />
+                        <TextField fx:id="txtCustPostalCode" layoutX="215.0" layoutY="207.0" promptText="Postal Code" />
+                        <JFXButton fx:id="btnAddNewCustomer" buttonType="RAISED" layoutX="858.0" layoutY="193.0" onAction="#addNewCustomerOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: #EAAC7F; -fx-background-radius: 5;" text="Add New Customer" AnchorPane.rightAnchor="20.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <Separator layoutX="14.0" layoutY="260.0" prefHeight="0.0" prefWidth="1015.0" style="-fx-background-color: #999;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                        <ComboBox fx:id="cmbItemCode" layoutX="14.0" layoutY="292.0" prefWidth="157.0" promptText="Item Code" AnchorPane.leftAnchor="20.0" />
+                        <ComboBox fx:id="cmbItemDescription" layoutX="203.0" layoutY="292.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" />
+                        <TextField fx:id="txtPackSize" alignment="CENTER_RIGHT" editable="false" layoutX="440.0" layoutY="292.0" prefHeight="26.0" prefWidth="213.0" />
+                        <TextField fx:id="txtUnitPrice" alignment="CENTER_RIGHT" editable="false" layoutX="440.0" layoutY="342.0" prefHeight="26.0" prefWidth="211.0" />
+                        <TextField fx:id="txtQtyOnHand" alignment="CENTER_RIGHT" editable="false" layoutX="672.0" layoutY="292.0" prefHeight="26.0" prefWidth="154.0" AnchorPane.rightAnchor="224.0" />
+                        <TextField fx:id="txtOrderQTY" alignment="CENTER_RIGHT" layoutX="858.0" layoutY="292.0" prefHeight="26.0" prefWidth="172.0" AnchorPane.rightAnchor="20.0" />
+                        <TextField fx:id="txtDiscount" alignment="CENTER_RIGHT" editable="false" layoutX="672.0" layoutY="342.0" prefHeight="26.0" prefWidth="154.0" />
+                        <JFXButton fx:id="btnAddToList" buttonType="RAISED" layoutX="859.0" layoutY="335.0" onAction="#addToListOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: #EAAC7F; -fx-background-radius: 5;" text="Add To List" AnchorPane.rightAnchor="20.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <Separator layoutX="20.0" layoutY="414.0" prefHeight="0.0" prefWidth="1015.0" style="-fx-background-color: #999;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                        <TableView fx:id="tblOrderItem" layoutX="20.0" layoutY="430.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                          <columns>
+                            <TableColumn fx:id="colItemCode" prefWidth="107.0" text="Item Code" />
+                            <TableColumn fx:id="colDescription" prefWidth="170.0" text="Description" />
+                              <TableColumn fx:id="colPackSize" prefWidth="141.0" text="Pack Size" />
+                              <TableColumn fx:id="colUnitPrice" prefWidth="115.0" text="Unit Price (Rs)" />
+                              <TableColumn fx:id="colOrderQTY" prefWidth="101.0" text="Order QTY" />
+                              <TableColumn fx:id="colSubTotal" minWidth="0.0" prefWidth="148.0" text="Subtotal (Rs)" />
+                              <TableColumn fx:id="colDiscount" minWidth="0.0" prefWidth="113.0" text="Discount (Rs)" />
+                              <TableColumn fx:id="colTotal" prefWidth="114.0" text="Total (Rs)" />
+                          </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#editItemOnAction" text="Edit Item" />
+                                    <MenuItem mnemonicParsing="false" onAction="#removeItemFromListOnAction" text="Remove Item" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <Separator layoutX="18.0" layoutY="667.0" prefHeight="0.0" prefWidth="1015.0" style="-fx-background-color: #999;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                        <GridPane layoutY="691.0" prefHeight="90.0" prefWidth="1050.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="691.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.0" minWidth="10.0" prefWidth="337.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.0" minWidth="10.0" prefWidth="363.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Group GridPane.halignment="LEFT">
+                                 <children>
+                                    <Label text="Order Subtotal" />
+                                    <Label layoutX="126.0" text=":  Rs  " />
+                                    <Label fx:id="lblOrderSubTotal" alignment="CENTER_RIGHT" layoutX="165.0380859375" prefHeight="16.0" prefWidth="100.0" text="0.00" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Group>
+                              <Group GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="0.0380859375" text="Total Discount" />
+                                    <Label layoutX="126.0380859375" text=":  Rs  " />
+                                    <Label fx:id="lblOrderTotalDiscount" alignment="CENTER_RIGHT" layoutX="165.0380859375" prefHeight="16.0" prefWidth="100.0" text="0.00" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Group>
+                              <Group GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label text="Order Cost" />
+                                    <Label layoutX="126.0" text=":  Rs  " />
+                                    <Label fx:id="lblOrderCost" alignment="CENTER_RIGHT" layoutX="165.0" prefHeight="16.0" prefWidth="100.0" text="0.00" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <children>
+                                    <Label text="Amount Paid" />
+                                    <Label layoutX="126.0" text=":  Rs  " />
+                                    <Label fx:id="lblAmountPaid" alignment="CENTER_RIGHT" layoutX="176.0" prefHeight="16.0" prefWidth="100.0" text="0.00" />
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Balance" />
+                                    <Label layoutX="126.0" text=":  Rs  " />
+                                    <Label fx:id="lblBalance" alignment="CENTER_RIGHT" layoutX="176.0" prefHeight="16.0" prefWidth="100.0" text="0.00" />
+                                 </children>
+                              </Group>
+                              <Group GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                                 <children>
+                                    <Label text="Payment Date" />
+                                    <Label layoutX="126.0" text=":" />
+                                    <Label fx:id="lblPaymentDate" alignment="CENTER_RIGHT" layoutX="159.0" layoutY="1.0" prefHeight="16.0" prefWidth="100.0" text="Date" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </Group>
+                              <Group GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Payment Time" />
+                                    <Label layoutX="126.0" text=":" />
+                                    <Label fx:id="lblPaymentTime" alignment="CENTER_RIGHT" layoutX="159.0" prefHeight="16.0" prefWidth="100.0" text="Time" />
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin>
+                              </Group>
+                           </children>
+                        </GridPane>
+                        <Separator layoutX="838.0" layoutY="279.0" orientation="VERTICAL" prefHeight="113.0" prefWidth="4.0" />
+                        <JFXButton fx:id="btnClearFields" buttonType="RAISED" layoutX="672.0" layoutY="193.0" onAction="#clearFieldsOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: #999; -fx-background-radius: 5;" text="Clear">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <TextField fx:id="txtPayment" alignment="CENTER_RIGHT" layoutX="414.0" layoutY="798.0" prefHeight="35.0" prefWidth="131.0" promptText="0.00" AnchorPane.rightAnchor="505.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Button fx:id="btnPayNow" layoutX="560.0" layoutY="798.0" mnemonicParsing="false" onAction="#payOrderOnAction" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #22a6b3; -fx-background-radius: 10;" text="Pay Now" textFill="WHITE">
+                           <effect>
+                              <InnerShadow choke="0.07" color="#2f5c8f" height="15.18" radius="8.6075" width="21.25" />
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="422.0" layoutY="808.0" text="Rs  :" />
+                        <Label layoutX="451.0" layoutY="297.0" text="Pack Size :" textFill="#999999" />
+                        <Label layoutX="679.0" layoutY="297.0" text="Qty On Hand :" textFill="#999999" />
+                        <Label layoutX="451.0" layoutY="347.0" text="Unit Price (Rs) : " textFill="#999999" />
+                        <Label layoutX="679.0" layoutY="347.0" text="Discount (%) :" textFill="#999999" />
+                        <Label layoutX="868.0" layoutY="297.0" text=" Order Qty :" textFill="#999999" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </AnchorPane>
+              </content>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ScrollPane>
+            <JFXButton fx:id="btnConfirmOrder" buttonType="RAISED" layoutX="839.0" layoutY="564.0" onAction="#confirmOrderOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: #1E6F5C; -fx-background-radius: 5;" text="Confirm Order" textFill="WHITE" AnchorPane.bottomAnchor="262.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="564.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnCancelOrder" buttonType="RAISED" layoutX="25.0" layoutY="562.0" onAction="#cancelOrderOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: #999; -fx-background-radius: 5;" text="Cancel" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="562.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

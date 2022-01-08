@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="contextCashierLoginForm" prefHeight="680.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos_system.controller.CashierLoginFormController">
+   <children>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="38.0" layoutY="107.0" onAction="#goToAdminLoginForm" prefHeight="50.0" prefWidth="225.0" style="-fx-background-color: #999; -fx-background-radius: 10;" text="Admin" textFill="WHITE" AnchorPane.topAnchor="85.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="263.0" layoutY="107.0" prefHeight="50.0" prefWidth="225.0" style="-fx-background-color: #5C8D89; -fx-background-radius: 10;" text="Cashier" textFill="WHITE" AnchorPane.topAnchor="85.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="63.0" layoutY="323.0" text="User Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="372.0" text="Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserName" layoutX="225.0" layoutY="318.0" prefHeight="26.0" prefWidth="263.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Group layoutX="225.0" layoutY="366.0">
+         <children>
+            <TextField fx:id="txtPassword" prefHeight="26.0" prefWidth="263.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="imgHidePwd" fitHeight="30.0" fitWidth="30.0" layoutX="233.0" onMouseClicked="#hidePasswordOnAction">
+               <image>
+                  <Image url="@../assets/images/hidePasswordicon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <PasswordField fx:id="fieldPassword" prefHeight="26.0" prefWidth="263.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <ImageView fx:id="imgShowPwd" fitHeight="30.0" fitWidth="30.0" layoutX="233.0" onMouseClicked="#showPasswordOnAction">
+               <image>
+                  <Image url="@../assets/images/showPasswordIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Group>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="242.0" layoutY="523.0" onAction="#signUpAsCashierOnAction" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #5C8D89; -fx-background-radius: 10;" text="Sign Up" textFill="WHITE" AnchorPane.bottomAnchor="117.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="373.0" layoutY="523.0" onAction="#loginAsCashierOnAction" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #5C8D89; -fx-background-radius: 10;" text="Login" textFill="WHITE" AnchorPane.bottomAnchor="117.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="270.0" layoutY="112.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="186.0">
+         <image>
+            <Image url="@../assets/images/userIcon2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

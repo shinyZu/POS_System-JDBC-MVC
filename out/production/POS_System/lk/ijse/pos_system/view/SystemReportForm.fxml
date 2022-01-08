@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="contextReports" prefHeight="680.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos_system.controller.SystemReportFormController">
+   <children>
+      <AnchorPane prefHeight="30.0" prefWidth="1050.0" style="-fx-background-color: #5C8D89;">
+         <children>
+            <Label layoutX="425.0" layoutY="17.0" prefHeight="26.0" prefWidth="200.0" text="System Reports" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="30.0" onMouseClicked="#goToPreviousPageOnAction" pickOnBounds="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../assets/images/arrowLeft.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="20.0" onMouseClicked="#logoutOnAction" pickOnBounds="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../assets/images/logoutIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Group layoutX="125.0" layoutY="83.0">
+         <children>
+            <Label prefHeight="91.0" prefWidth="214.0" style="-fx-background-color: #068B78; -fx-background-radius: 15;" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.25" color="#0d684e" height="60.46" radius="29.73" width="60.46" />
+               </effect>
+            </Label>
+            <Label fx:id="lblMostMovableItem" layoutX="70.0" layoutY="46.0" text="I-000" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="23.0" text="Most Movable Item" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Group layoutX="497.0" layoutY="83.0">
+         <children>
+            <Label prefHeight="91.0" prefWidth="214.0" style="-fx-background-color: BD9354; -fx-background-radius: 15;" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <effect>
+                  <InnerShadow choke="0.14" color="#946621" height="90.82" radius="35.802499999999995" width="54.39" />
+               </effect>
+            </Label>
+            <Label fx:id="lblLeastMovableItem" layoutX="80.0" layoutY="46.0" text="I-000" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="22.0" text="Least Movable Item" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <TabPane layoutX="24.0" layoutY="250.0" prefHeight="430.0" prefWidth="1009.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="250.0">
+        <tabs>
+          <Tab  text="Daily Report">
+            <content>
+              <AnchorPane fx:id="contextDailyReport" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblDailyReport" layoutX="62.0" layoutY="113.0" prefHeight="286.0" prefWidth="886.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+                          <columns>
+                            <TableColumn fx:id="colItemCode" prefWidth="201.0" text="Item Code" />
+                            <TableColumn fx:id="colDescription" prefWidth="289.0" text="Description" />
+                              <TableColumn fx:id="colSalesQuantity" prefWidth="254.0" text="Sales Quantity" />
+                              <TableColumn fx:id="colIncome" prefWidth="174.0" text="Income (Rs)" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Monthly Report">
+            <content>
+              <AnchorPane fx:id="contextMonthlyReport" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblMonthlyReport" prefHeight="286.0" prefWidth="886.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+                           <columns>
+                              <TableColumn fx:id="colItemCode1" prefWidth="201.0" text="Item Code" />
+                              <TableColumn prefWidth="289.0" text="Description" />
+                              <TableColumn prefWidth="254.0" text="Sales Quantity" />
+                              <TableColumn prefWidth="174.0" text="Income (Rs)" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tblAnnualReport"  text="Annual Report">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="286.0" prefWidth="886.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+                           <columns>
+                              <TableColumn prefWidth="201.0" text="Item Code" />
+                              <TableColumn prefWidth="289.0" text="Description" />
+                              <TableColumn prefWidth="254.0" text="Quantity Sold" />
+                              <TableColumn prefWidth="174.0" text="Income (Rs)" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab  text="Customer wise Income">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblCustomerWiseIncome" layoutX="41.0" layoutY="106.0" prefHeight="286.0" prefWidth="919.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+                          <columns>
+                            <TableColumn fx:id="colCustomerId" prefWidth="165.66665649414062" text="Customer ID" />
+                              <TableColumn fx:id="colCustomerTitle" prefWidth="156.66668701171875" text="Customer Title" />
+                            <TableColumn fx:id="colCustomerName" prefWidth="248.33331298828125" text="Customer Name" />
+                              <TableColumn fx:id="colCustomerCity" prefWidth="194.0" text="Customer City" />
+                              <TableColumn fx:id="colCustomerIncome" prefWidth="151.0" text="Income (Rs)" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label contentDisplay="CENTER" layoutX="840.0" layoutY="76.0" prefHeight="36.0" prefWidth="168.0" style="-fx-background-radius: 8; -fx-border-color: black; -fx-border-radius: 5; -fx-border-image-width: 6;" text="Date :">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblDate" layoutX="846.0" layoutY="85.0" prefWidth="155.0" text="16-08-2021">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets left="65.0" />
+         </padding>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="840.0" layoutY="136.0" prefHeight="36.0" prefWidth="168.0" style="-fx-background-radius: 8; -fx-border-color: black; -fx-border-radius: 5;" text="Time : ">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblTime" layoutX="899.0" layoutY="144.0" prefHeight="19.0" prefWidth="109.0" text="08:07:43 AM">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="datePicker" layoutX="817.0" layoutY="200.0" AnchorPane.leftAnchor="817.0" AnchorPane.topAnchor="200.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXDatePicker>
+      <Separator layoutX="405.0" layoutY="199.0" prefWidth="200.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+   </children>
+</AnchorPane>
